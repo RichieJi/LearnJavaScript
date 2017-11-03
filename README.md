@@ -21,14 +21,14 @@
 注意点：平台相关的API接口。
 比如在谷歌平台上，输出一段信息可以用如下的代码：
 
-```
+```javascript
 var scriptText = "var power = function(n) {return Math.pow(2,n);};console.log(power(5));";
 eval(scriptText);
 ```
 上面的代码，在谷歌浏览器的控制台中运行的时候，可以看到会输出32。
 同样的，在JVM平台，需要这么写：
 
-```
+```java
 import javax.script.ScriptEngine;
 public class MyDemo {
     public static void main(String... args) throws Exception {
@@ -48,7 +48,7 @@ public class MyDemo {
 ### 服务器端
 基于NodeJS平台，可以使用JavaScript创建一个Web服务器，使用以下代码即可创建一个简单的HTTP服务器：
 
-```
+```javascript
 var http = require('http');
 function myNode(request, response){
   response.writeHead(200, {'Content-type':'text/plain'});
