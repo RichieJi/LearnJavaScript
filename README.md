@@ -43,6 +43,8 @@ public class MyDemo {
 区别就在于谷歌浏览器中输出信息用的console.log函数，而JVM平台用的print函数。
 
 ## 应用领域
+### 浏览器端
+这个不用多说，现代浏览器就没有不支持JavaScript的，只要早html文件中引入相应的JavaScript代码即可，参见例子的html文件：[first.html](demo/first.html)。
 
 ## 基本语法
 ### 变量定义

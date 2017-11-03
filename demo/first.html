@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<div>这是一个示例页面</div>
+<div id="times"></div>
+</body>
+<script type="text/javascript">
+    var times = 1;
+    var doc = document.getElementById("times");
+    var id = setInterval(function () {
+        doc.innerHTML = times++;
+        if (times > 5) {
+            console.log("5次循环结束！");
+            clearInterval(id);
+        }
+    }, 2000);
+</script>
+</html>
