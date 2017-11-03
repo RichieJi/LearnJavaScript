@@ -45,6 +45,31 @@ public class MyDemo {
 ## 应用领域
 ### 浏览器端
 这个不用多说，现代浏览器就没有不支持JavaScript的，只要早html文件中引入相应的JavaScript代码即可，参见例子的html文件：[first.html](demo/first.html)。
+### 服务器端
+基于NodeJS平台，可以使用JavaScript创建一个Web服务器，使用以下代码即可创建一个简单的HTTP服务器：
+
+```
+var http = require('http');
+function myNode(request, response){
+  response.writeHead(200, {'Content-type':'text/plain'});
+  response.write('hello world'); //hello world
+  response.end();
+}
+http.createServer(myNode).listen(2222); //监听2222端口
+console.log('Server has started'); //在控制台提示服务启动
+```
+在机器上安装好NodeJS平台之后，执行
+
+```
+node start.js
+```
+就可以启动web服务器，访问[http://localhost:2222](http://localhost:2222)就可以看到hello world页面了。
+### 桌面应用
+典型的如[electron框架](https://electron.atom.io/)，就是可以使用JavaScript开发mac和windows上的跨平台桌面应用框架。
+
+帆软的大屏应用（可以装载CVTouch上的应用程序），就是基于该框架开发的。
+
+其他的比如桌面钉钉、桌面微信基本都是基于类似的框架。
 
 ## 基本语法
 ### 变量定义
