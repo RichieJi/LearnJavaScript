@@ -73,7 +73,51 @@ node start.js
 
 ## 基本语法
 ### 变量定义
-包括局部变量和全局变量，以及变量的作用域。
+JavaScript中变量分为局部变量和全局变量，局部变量使用var关键字进行申明，不使用var关键字的变量则为全局变量。
+
+* JavaScript的变量作用域是基于其特有的作用域链的。
+* JavaScript没有块级作用域。
+* 函数中声明的变量在整个函数中都有定义。
+
+```javascript
+function log() {
+    // log函数体内存在三个局部变量 i j k
+    var i = 0;
+    if (1) {
+        var j = 0;
+        for (var k = 0; k < 3; k++) {
+            alert(k);    //分别弹出 0 1 2
+        }
+        alert(k);        //弹出3
+    }
+    alert(j);            //弹出0
+}
+```
+函数内部的局部变量会覆盖同名的外部变量
+
+```javascript
+var x = 1;
+function log(){
+    alert( x );        //弹出 'undefined'，而不是1
+    var x = 'hello';
+    alert( x );        //弹出 'hello'
+}
+log();
+```
+事实上，上面的语句相当于
+
+```javascript
+var x = 1;
+function log(){
+    var x;
+    alert( x );        //弹出 'undefined'，而不是1
+    x = 'hello';
+    alert( x );        //弹出 'hello'
+}
+log();
+```
+
+
 ### 基本运算
 待补充。
 ### 控制语句
